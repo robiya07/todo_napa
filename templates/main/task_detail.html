@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    Detail Task
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        Detail task
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Task title:</h5>
+                        <p class="card-text ms-4 p-lg-2"> - {{ task.name }}</p>
+
+                        <h5 class="card-title">Task description:</h5>
+                        <p class="card-text ms-4 p-lg-2">{{ task.description }}</p>
+                        <h5 class="card-title">Task created:</h5>
+                        <p class="card-text ms-4 p-lg-2"> {{ ago }}</p>
+                        {{ 154|get_digit:"2" }}
+
+                        <h5 class="card-title">Task status:</h5>
+                        {% if task.status %}
+                            <i class="bi bi-check-circle-fill text-success ms-4 "></i>
+                            <i class="ms-2"> Completed</i>
+                        {% else %}
+                            <i class="bi bi-x-circle-fill text-danger ms-4"></i> <i class="ms-2"> Incomplete</i>
+                        {% endif %}
+                        <br>
+                        <br>
+                        <a href="{% url 'task_list' %}" class="btn btn-success px-5 py-2">Back</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

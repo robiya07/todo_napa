@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "todo-napa"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "todo_napa"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.2"
+crispy-bootstrap5 = "^0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

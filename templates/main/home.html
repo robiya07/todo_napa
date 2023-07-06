@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block content %}
+    <div style="padding-top: 300px; padding-left: 700px;">
+        <h1>Welcome to Todo App</h1>
+        <h3 style="margin-left: 100px;"><a href="{% url 'registration' %}">Registration ⤍</a></h3>
+    </div>
+
+
+{% endblock %}

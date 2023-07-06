@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    Update Task
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        Update task
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'task_update' task.id %}" method="post">
+                            {% csrf_token %}
+                            {{ update_form|crispy }}
+
+                            <button class="btn btn-success px-5 py-2" type="submit">Update</button>
+                            <a href="{% url 'task_list' %}" class="btn btn-secondary  px-3 py-2">Back</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    Delete Task
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        Log out
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Are you sure you want to log out?</h5>
+                        <br>
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Logout" class="btn btn-danger">
+                            <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
